@@ -1,6 +1,7 @@
-var { readdirSync } = require("node:fs");
+var { readdirSync, readFileSync } = require("node:fs");
 var { join } = require("node:path");
 var express = require("express");
+var os = require("node:os");
 
 var app = express();
 
@@ -26,6 +27,17 @@ app.get('/pictures', (req, res) => {
         resBody.push(`/assets/images/jobs/${img}`);
     })
     res.send(resBody);
+})
+
+app.get('/motd', (req, res) => {
+    var motd = readFileSync(join(__dirname, '..', 'public', 'assets', 'text', 'motd.txt')).toString();
+    var motds = motd.split(os.EOL);
+    var ran_motd_index = Math.floor(Math.random() * motds.length);
+    res.send(JSON.stringify(motds[ran_motd_index]));
+})
+
+app.get("/xleet.php", (req, res) => {
+    res.json({ message: "Stop that." });
 })
 
 app.listen(port, () => {

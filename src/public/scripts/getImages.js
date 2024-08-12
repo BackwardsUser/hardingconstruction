@@ -8,12 +8,28 @@ fetch('/pictures')
         img.src = image;
 
         img.addEventListener("click", () => {
+            var main = document.getElementById('main');
+            var wasLast = {top:0, left:0};
             if (img.id == "displaying") {
                 img.id = "";
+                main.scrollBy({
+                    behavior: 'smooth',
+                    left: wasLast.left,
+                    top: wasLast.top
+                })
+                wasLast.top = 0;
+                wasLast.left = 0;
                 return;
             }
+            wasLast.top = main.scrollTop;
+            wasLast.left = main.scrollWidth;
             if (document.getElementById("displaying")) document.getElementById("displaying").id = "";
             img.id = "displaying";
+            img.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'center'
+            });
         })
 
         imageContainer.appendChild(img);

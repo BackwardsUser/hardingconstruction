@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="/styles/index.css">
     <title>Harding Construction</title>
     <script src="/scripts/getImages.js" defer></script>
+    <script src="/scripts/getMOTD.js"></script>
+    <script src="/scripts/scrollHandler.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Harding Construction</h1>
-        <h4>Putting the U in Construction</h4>
+    <header id="header">
+        <h1 class="sticky top" id="title">Harding Construction</h1>
+        <h4 id="motd"></h4>
     </header>
-    <main>
+    <main id="main">
         <div class="img-container" id="img-container">
         </div>
     </main>
     <footer>
+        <p style="margin-bottom: 0.5em;">Contact via <a style="color: cadetblue;" href="mailto:aaron@aaronharding.ca">Email</a>.</p>
         © <a href="https://backwardsdevelopment.ca/" class="unmarked-link">BackwardsDevelopment.ca</a>
     </footer>
 </body>
