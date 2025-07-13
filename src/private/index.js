@@ -5,7 +5,7 @@ var os = require("node:os");
 
 var app = express();
 
-var port = "3001";
+var port = 3001;
 
 app.use(express.static(join(__dirname, "..", "public")));
 

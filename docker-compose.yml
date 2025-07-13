@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3001:3001"
+    volumes:
+      - /srv/hardingcons/photos:/app/src/public/assets/images/jobs
+    restart: unless-stopped
