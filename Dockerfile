@@ -1,4 +1,4 @@
-FROM node:20-alpine
+FROM node:20
 WORKDIR /app
 
 COPY package*.json ./
@@ -6,4 +6,4 @@ RUN npm install --production
 
 COPY src ./src
 
-CMD ["node", "src/index.js"]
+CMD ["node", "src/private/index.js"]

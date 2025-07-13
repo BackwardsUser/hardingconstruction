@@ -8,4 +8,4 @@ services:
       - "3001:3001"
     volumes:
       - /srv/hardingcons/photos:/app/src/public/assets/images/jobs
-    restart: unless-stopped
+    restart: no
