@@ -6,4 +6,4 @@ RUN npm install --production
 
 COPY src ./
 
-CMD ["node", "src/private/index.js"]
+CMD ["node", "."]
