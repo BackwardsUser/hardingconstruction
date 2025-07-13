@@ -4,6 +4,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install --production
 
-COPY src ./
+COPY src ./src
 
-CMD ["node", "."]
+CMD ["node", "src/index.js"]
